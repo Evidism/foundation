@@ -4,6 +4,7 @@ import '../styles/global.css';
 import Emblem from '../components/Emblem.astro';
 import { getFoundation } from '../lib/foundation';
 import { href, pagePath } from '../lib/url';
+import { REPOSITORY } from '../../astro.config.mjs';
 
 interface Props {
   title?: string;
@@ -47,6 +48,8 @@ const path = pagePath(Astro.url.pathname);
         <a href={href("evidism.pdf")}>PDF</a>
         <span aria-hidden="true">·</span>
         <a href={href("foundation.json")}>JSON</a>
+        <span aria-hidden="true">·</span>
+        <a href={REPOSITORY}>GitHub</a>
       </p>
     </footer>
   </body>

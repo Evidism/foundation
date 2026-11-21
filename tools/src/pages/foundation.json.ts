@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getFoundation } from '../lib/foundation';
+import { REPOSITORY } from '../../astro.config.mjs';
 
 /**
  * The whole founding document as JSON, generated from the Markdown at the repository root on every
@@ -14,6 +15,7 @@ export const GET: APIRoute = async () => {
     version: f.version,
     date: f.date.toISOString().slice(0, 10),
     motto: f.motto,
+    repository: REPOSITORY,
     sections: f.sections.map((s) => ({
       number: s.number,
       slug: s.slug,

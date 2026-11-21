@@ -14,7 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { PDFDocument, PDFName } from 'pdf-lib';
-import { BASE, SITE } from '../astro.config.mjs';
+import { BASE, REPOSITORY, SITE } from '../astro.config.mjs';
 
 const tools = fileURLToPath(new URL('..', import.meta.url));
 const root = path.resolve(tools, '..');
@@ -96,7 +96,8 @@ try {
     headerTemplate: '<span></span>',
     footerTemplate:
       '<div style="width:100%;text-align:center;font-family:monospace;font-size:8px;color:#5c574e;">' +
-      '<span class="pageNumber"></span></div>',
+      '<span class="pageNumber"></span> · ' +
+      `${REPOSITORY.replace(/^https:\/\//, '')}</div>`,
   });
 } finally {
   await browser.close();

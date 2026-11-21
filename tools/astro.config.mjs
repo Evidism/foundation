@@ -6,6 +6,9 @@ import { defineConfig } from 'astro/config';
 export const SITE = 'https://evidism.github.io';
 export const BASE = '/foundation';
 
+// Where the source of the document lives. Linked from every format.
+export const REPOSITORY = 'https://github.com/Evidism/foundation';
+
 export default defineConfig({
   site: SITE,
   base: BASE,
