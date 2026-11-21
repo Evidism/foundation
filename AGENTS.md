@@ -32,6 +32,8 @@ Write one short line that sums up the change. Nothing else: no body, no bullet l
 
 The version is the `version` field at the top of `00-title-page.md`. It follows semantic versioning, `MAJOR.MINOR.PATCH`, and is written nowhere else.
 
+The version belongs to the founding document, not to the formats. It changes only when the content of the root Markdown changes. The formats are only ways to read that content outside the Markdown, so changes to `formats/` or `tools/` never call for a new version: a new web design, a different PDF layout, a new field in the JSON, a new format, or a fix to the build. They reach the website when merged and appear in the next release's PDF and JSON.
+
 When a commit on `main` carries a version that has no tag yet, the `Formats` workflow tags it `vMAJOR.MINOR.PATCH` and publishes a GitHub release with the PDF and JSON attached. The workflow refuses a version lower than the latest release.
 
 **People decide the version. Agents only suggest it.** When a change may warrant a release, say which part you would bump and why, then wait. Never change `version` or `date`, create a tag, or publish a release unless a person has decided on that exact version.
@@ -41,8 +43,9 @@ Use this as the starting point for a suggestion:
 | Bump | When | Examples |
 | --- | --- | --- |
 | **MAJOR** | A change to what members commit to: the creed, or changing or removing an existing tenet, ethical commitment, right, or rule of governance | Rewording a creed principle so it means something different; changing how decisions are made |
-| **MINOR** | Something new that leaves existing commitments as they were | A new section, tenet, observance, or practice; a new format |
-| **PATCH** | No change in meaning | Typos, clearer wording, formatting, fixes to the formats or tools |
+| **MINOR** | Something new in the document that leaves existing commitments as they were | A new section, tenet, observance, or practice |
+| **PATCH** | A change to the document's text with no change in meaning | Typos, clearer wording, Markdown formatting |
+| **None** | Nothing in the root Markdown changes | Web design, PDF layout, JSON structure, a new format, fixes to the tools |
 
 When a version is decided, update `version` and `date` in `00-title-page.md` in the same change.
 

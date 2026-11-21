@@ -35,6 +35,8 @@ The version on the title page uses three numbers, `MAJOR.MINOR.PATCH`, for examp
 
 - **MAJOR** changes when what members commit to changes: the creed, or an existing tenet, ethical commitment, right, or rule of governance.
 - **MINOR** changes when something is added and existing commitments stay as they were, such as a new section or observance.
-- **PATCH** changes when nothing changes in meaning, such as a typo or clearer wording.
+- **PATCH** changes when the text changes but nothing changes in meaning, such as a typo or clearer wording.
+
+The version belongs to the founding document, not to its formats. It changes only when the content of the Markdown changes. The website, PDF, and JSON are ways to read the document outside the Markdown, so changing how they look or work, such as a new web design or PDF layout, never needs a new version.
 
 Anyone may suggest a version. People decide it. When a change with a new version reaches `main`, it is tagged and released automatically, with the PDF and JSON attached.
